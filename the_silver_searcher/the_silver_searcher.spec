@@ -1,11 +1,11 @@
-%global commit 4b270d1afa5dce30975b4f987423077c9ad0db56
+%global commit 7e212a4cbf01fa0c8275f05eaa2b2807bd127c11
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global bashcompdir %(pkg-config --variable=completionsdir bash-completion)
 
 Name:           the_silver_searcher
-Version:        0.24.1
+Version:        0.25.0
 Release:        1%{?dist}
-Summary:        Super-fast text searching tool
+Summary:        Super-fast text searching tool (ag)
 Group:          Applications/Text
 License:        ASL 2.0 and BSD
 URL:            https://github.com/ggreer/the_silver_searcher
@@ -46,6 +46,9 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}
 %doc README.md LICENSE
 
 %changelog
+* Tue Oct 15 2014 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 0.25.0-1
+- update to 0.25.0
+
 * Tue Sep 30 2014 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 0.24.1-1
 - update to 0.24.1
 
