@@ -1,4 +1,4 @@
-%global commit 636bd9b1a78183fb5dddb8d556d184ff99152d4a
+%global commit 1fdac712e7c89b331533e8fc5bb0ad5236d9f5cd
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 # We have to override the new %%install behavior because, well... the kernel is special.
@@ -1862,6 +1862,9 @@ fi
 # and build.
 
 %changelog
+* Wed Dec 03 2014 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 3.14.15-307
+- Update to MPTCP v0.89.3
+
 * Tue Sep 23 2014 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 3.14.15-306
 - Update .config
 
