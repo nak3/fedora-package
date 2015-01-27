@@ -1862,7 +1862,7 @@ fi
 # and build.
 
 %changelog
-* Wed Dec 03 2014 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 3.14.15-308
+* Tue Jan 27 2015 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 3.14.15-308
 - Update to MPTCP v0.89.4
 
 * Wed Dec 03 2014 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 3.14.15-307
