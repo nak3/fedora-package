@@ -1,11 +1,11 @@
 PACKAGE = apt-cacher-ng
-VERSION = 0.7.27
+VERSION = 0.8.0
 RELEASE = 1
-UPSTREAM_RELEASE = 1
+UPSTREAM_RELEASE = 3
 TMPREPOS = tmp.repos
 TMPREVIEW = tmp.review
-FC_VERSION = fc20
-F_VERSION = f20
+FC_VERSION = fc21
+F_VERSION = fc21
 
 all: srpm
 

@@ -1,5 +1,5 @@
 Name:             apt-cacher-ng
-Version:          0.7.27
+Version:          0.8.0
 Release:          1%{?dist}
 Summary:          Caching proxy for package files from Debian
 Group:            Applications/Internet
@@ -50,7 +50,7 @@ make %{?_smp_mflags}
 mkdir -p $RPM_BUILD_ROOT%{_sbindir}/
 install -pm 0755 build/apt-cacher-ng $RPM_BUILD_ROOT%{_sbindir}/
 mkdir -p $RPM_BUILD_ROOT%{_libexecdir}/apt-cacher-ng/
-install -pm 0755 build/in.acng expire-caller.pl urlencode-fixer.pl distkill.pl $RPM_BUILD_ROOT%{_libexecdir}/apt-cacher-ng/
+install -pm 0755 build/in.acng scripts/expire-caller.pl scripts/urlencode-fixer.pl scripts/distkill.pl $RPM_BUILD_ROOT%{_libexecdir}/apt-cacher-ng/
 # optional
 cp build/acngfs $RPM_BUILD_ROOT%{_libexecdir}/apt-cacher-ng/
 cp -a conf/{*mirror*,*.html,*.css} $RPM_BUILD_ROOT%{_libexecdir}/apt-cacher-ng/
@@ -114,14 +114,14 @@ getent passwd apt-cacher-ng > /dev/null || useradd -r -d %{_sharedstatedir}/apt-
 %{_mandir}/man8/*
 
 %changelog
+* Tue Jan 27 2015 Kenjiro Nakayama <knakayam@redhat.com> - 0.8.0-1
+- update to 0.8.0
+
 * Wed Jun 25 2014 Kenjiro Nakayama <knakayam@redhat.com> - 0.7.26-2
 - update to 0.7.26 fixed XSS vulnerability (rhbz 1111808)
 
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.25-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
-
-* Fri May 23 2014 Petr Machata <pmachata@redhat.com> - 0.7.25-4
-- Rebuild for boost 1.55.0
 
 * Fri Mar 14 2014 Kenjiro Nakayama <knakayam@redhat.com> - 0.7.25-3
 - update to 0.7.25
