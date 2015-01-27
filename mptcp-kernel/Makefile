@@ -1,13 +1,13 @@
 PACKAGE = kernel
 VERSION = 3.14.15
 LINUX_VERSION = 3.14
-RELEASE = 307
+RELEASE = 308
 TMPREPOS = tmp.repos
-F_VERSION = f20
-FC_VERSION = fc20
+F_VERSION = f21
+FC_VERSION = fc21
 
-commit =      1fdac712e7c89b331533e8fc5bb0ad5236d9f5cd
-shortcommit = 1fdac712e
+commit =      1c2d783a6c8f89645713d0d0e625f6b214830339
+shortcommit = 1c2d783a6
 
 all: srpm
 

@@ -1,4 +1,4 @@
-%global commit 1fdac712e7c89b331533e8fc5bb0ad5236d9f5cd
+%global commit 1c2d783a6c8f89645713d0d0e625f6b214830339
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 # We have to override the new %%install behavior because, well... the kernel is special.
@@ -65,7 +65,7 @@ Summary: The Linux kernel
 # For non-released -rc kernels, this will be appended after the rcX and
 # gitX tags, so a 3 here would become part of release "0.rcX.gitX.3"
 #
-%global baserelease 307
+%global baserelease 308
 %global fedora_build %{baserelease}
 
 # base_sublevel is the kernel version we're starting with and patching
@@ -1862,6 +1862,9 @@ fi
 # and build.
 
 %changelog
+* Wed Dec 03 2014 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 3.14.15-308
+- Update to MPTCP v0.89.4
+
 * Wed Dec 03 2014 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 3.14.15-307
 - Update to MPTCP v0.89.3
 
