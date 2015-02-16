@@ -1,9 +1,9 @@
-%global commit 45b670b9f69c96758bb3f3e92ed8d3b4e150a58c
+%global commit 803700e21f1f557ee41e14b01525045289d2b15c
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global bashcompdir %(pkg-config --variable=completionsdir bash-completion)
 
 Name:           the_silver_searcher
-Version:        0.27.0
+Version:        0.29.1
 Release:        1%{?dist}
 Summary:        Super-fast text searching tool (ag)
 Group:          Applications/Text
