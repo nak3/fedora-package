@@ -22,12 +22,6 @@ scp:
 srpm:   wget
 	mkdir -p $(TMPREPOS)/{SPECS,RPMS,SRPMS,SOURCES}
 	cp $(PACKAGE)-$(VERSION).tar.gz $(TMPREPOS)/SOURCES/$(PACKAGE)-$(VERSION).tar.gz
-#	----
-#	tar xvf $(PACKAGE)-$(VERSION).tar.gz
-#	cp -r rel-eng openshift-sdn-667d4aee179d89c377bf8557cb41c741307fcb4e/
-#	tar cvf openshift-sdn-0.1.tar.gz openshift-sdn-667d4aee179d89c377bf8557cb41c741307fcb4e
-#	cp $(PACKAGE)-$(VERSION).tar.gz $(TMPREPOS)/SOURCES/$(PACKAGE)-$(VERSION).tar.gz
-#	----
 	rpmbuild --define="_source_filedigest_algorithm md5" --define="_topdir `pwd`/$(TMPREPOS)" -bs $(PACKAGE).spec
 	@echo
 	@echo "srpm available at '$(TMPREPOS)'"
