@@ -4,10 +4,10 @@
 %global osdn_gopath _output/local/go
 %global gopkg_base  github.com/openshift
 %global import_path %{gopkg_base}/openshift-sdn
-%global commit      667d4aee179d89c377bf8557cb41c741307fcb4e
+%global commit      70d604e44c9ddb50b7ff3879c10d04ccf160de7c
 
 Name:           openshift-sdn
-Version:        0.1
+Version:        0.4
 Release:        1%{?dist}
 Summary:        SDN solutions for OpenShift
 License:        ASL 2.0
@@ -25,24 +25,30 @@ Requires:       bridge-utils
 %{summary}
 
 %package master
-Summary:        Openshift SDN Master
-Requires:       openshift-sdn = %{version}-%{release}
-Requires:       openshift-master
+Summary:          Openshift SDN Master
+Requires:         openshift-sdn = %{version}-%{release}
+Requires:         openshift-master
+Requires(post):   systemd
+Requires(preun):  systemd
+Requires(postun): systemd
 
 %description master
 %{summary}
 
 %package node
-Summary:        Openshift SDN Node
-Requires:       openshift-sdn = %{version}-%{release}
-Requires:       openshift-node
-Requires:       docker-io >= 1.3.2
+Summary:          Openshift SDN Node
+Requires:         openshift-sdn = %{version}-%{release}
+Requires:         openshift-node
+Requires:         docker-io >= 1.3.2
+Requires(post):   systemd
+Requires(preun):  systemd
+Requires(postun): systemd
 
 %description node
 %{summary}
 
 %prep
-%setup -q -n openshift-sdn-%{commit}
+%setup -q -n %{name}-%{commit}
 
 %build
 

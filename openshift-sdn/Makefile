@@ -1,11 +1,11 @@
 PACKAGE = openshift-sdn
-VERSION = 0.1
+VERSION = 0.4
 RELEASE = 1
 TMPREPOS = tmp.repos
 TMPREVIEW = tmp.review
 FC_VERSION = fc21
 F_VERSION = f21
-DOWNLOAD_LINK = https://github.com/openshift/openshift-sdn/archive/667d4aee179d89c377bf8557cb41c741307fcb4e/openshift-sdn-0.1.tar.gz
+DOWNLOAD_LINK = https://github.com/openshift/openshift-sdn/archive/70d604e44c9ddb50b7ff3879c10d04ccf160de7c/openshift-sdn-0.4.tar.gz
 
 all: srpm
 
@@ -21,12 +21,12 @@ scp:
 
 srpm:   wget
 	mkdir -p $(TMPREPOS)/{SPECS,RPMS,SRPMS,SOURCES}
-#	cp $(PACKAGE)-$(VERSION).tar.gz $(TMPREPOS)/SOURCES/$(PACKAGE)-$(VERSION).tar.gz
-#	----
-	tar xvf $(PACKAGE)-$(VERSION).tar.gz
-	cp -r rel-eng openshift-sdn-667d4aee179d89c377bf8557cb41c741307fcb4e/
-	tar cvf openshift-sdn-0.1.tar.gz openshift-sdn-667d4aee179d89c377bf8557cb41c741307fcb4e
 	cp $(PACKAGE)-$(VERSION).tar.gz $(TMPREPOS)/SOURCES/$(PACKAGE)-$(VERSION).tar.gz
+#	----
+#	tar xvf $(PACKAGE)-$(VERSION).tar.gz
+#	cp -r rel-eng openshift-sdn-667d4aee179d89c377bf8557cb41c741307fcb4e/
+#	tar cvf openshift-sdn-0.1.tar.gz openshift-sdn-667d4aee179d89c377bf8557cb41c741307fcb4e
+#	cp $(PACKAGE)-$(VERSION).tar.gz $(TMPREPOS)/SOURCES/$(PACKAGE)-$(VERSION).tar.gz
 #	----
 	rpmbuild --define="_source_filedigest_algorithm md5" --define="_topdir `pwd`/$(TMPREPOS)" -bs $(PACKAGE).spec
 	@echo
