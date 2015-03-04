@@ -3,14 +3,14 @@
 %global gopath      %{_datadir}/gocode
 %global import_path github.com/openshift/origin
 %{!?commit:
-%global commit 4d519b759d58177809b5abe9f98a6cad40459755
+%global commit b071d7f177041cb3f90b888c1ba2dc0636863c75
 }
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           openshift
-Version:        0.3
+Version:        0.3.4
 #Release:        1git%{shortcommit}%{?dist}
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        Open Source Platform as a Service by Red Hat
 License:        ASL 2.0
 URL:            https://%{import_path}
