@@ -4,11 +4,11 @@
 %global osdn_gopath _output/local/go
 %global gopkg_base  github.com/openshift
 %global import_path %{gopkg_base}/openshift-sdn
-%global commit      70d604e44c9ddb50b7ff3879c10d04ccf160de7c
+%global commit      f2fa4fc1528037f6b67db5c153e5de7cc755fdc3
 
 Name:           openshift-sdn
 Version:        0.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        SDN solutions for OpenShift
 License:        ASL 2.0
 URL:            https://%{import_path}
