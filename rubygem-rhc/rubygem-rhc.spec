@@ -12,7 +12,7 @@ BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 # rubygem-rhc only runs on ruby, not jruby or other interpreters
 Requires:      ruby
-Requires:      ruby(release)
+#Requires:      ruby(release)
 Requires:      rubygem-archive-tar-minitar
 Requires:      rubygem-commander >= 4.0
 Requires:      rubygem-highline >= 1.6.11
