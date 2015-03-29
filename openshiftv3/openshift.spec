@@ -3,12 +3,12 @@
 %global gopath      %{_datadir}/gocode
 %global import_path github.com/openshift/origin
 %{!?commit:
-%global commit e954cd833703efc28304a48a15c7db8b9c41df2b
+%global commit 5b81e50725d6ebb08145cd6bacfe9dc045461872
 }
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           openshift
-Version:        0.4
+Version:        0.4.1
 #Release:        1git%{shortcommit}%{?dist}
 Release:        1%{?dist}
 Summary:        Open Source Platform as a Service by Red Hat

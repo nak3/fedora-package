@@ -1,11 +1,12 @@
 PACKAGE = openshift-sdn
 VERSION = 0.4
-RELEASE = 2
+RELEASE = 3
 TMPREPOS = tmp.repos
 TMPREVIEW = tmp.review
 FC_VERSION = fc21
 F_VERSION = f21
-DOWNLOAD_LINK = https://github.com/openshift/openshift-sdn/archive/f2fa4fc1528037f6b67db5c153e5de7cc755fdc3/openshift-sdn-0.4.tar.gz
+COMMIT=13077b22258424816661b52670272dbd8e960d69
+DOWNLOAD_LINK = https://github.com/openshift/openshift-sdn/archive/$(COMMIT)/openshift-sdn-0.4.tar.gz
 
 all: srpm
 

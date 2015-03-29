@@ -1,11 +1,11 @@
 PACKAGE = openshift
-VERSION = 0.4
+VERSION = 0.4.1
 RELEASE = 1
 TMPREPOS = tmp.repos
 TMPREVIEW = tmp.review
 FC_VERSION = fc21
 F_VERSION = f21
-COMMIT=e954cd833703efc28304a48a15c7db8b9c41df2b
+COMMIT=5b81e50725d6ebb08145cd6bacfe9dc045461872
 DOWNLOAD_LINK = https://github.com/openshift/origin/archive/$(COMMIT)/openshift-$(VERSION).tar.gz
 
 all: srpm
