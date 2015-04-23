@@ -3,12 +3,12 @@
 %global gopath      %{_datadir}/gocode
 %global import_path github.com/openshift/origin
 %{!?commit:
-%global commit 5d807459dd95d1db0b9ebd6015fb6a21883864af
+%global commit b935023c968b42c1b3cc018a550caa1693fa6d84
 }
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           openshift
-Version:        0.4.2
+Version:        0.4.3
 #Release:        1git%{shortcommit}%{?dist}
 Release:        1%{?dist}
 Summary:        Open Source Platform as a Service by Red Hat
@@ -104,6 +104,7 @@ install -m 0644 rel-eng/openshift-node.sysconfig %{buildroot}%{_sysconfdir}/sysc
 mkdir -p %{buildroot}%{_sharedstatedir}/%{name}
 
 ln -s %{_bindir}/openshift %{buildroot}%{_bindir}/osc
+ln -s %{_bindir}/openshift %{buildroot}%{_bindir}/osadm
 
 mkdir -p %{buildroot}/usr/lib/tuned/openshift-node
 install -m 0644 -t %{buildroot}/usr/lib/tuned/openshift-node tuned/openshift-node/tuned.conf
@@ -113,6 +114,7 @@ install -m 0644 -t %{buildroot}/usr/lib/tuned/openshift-node tuned/openshift-nod
 %doc README.md LICENSE
 %{_bindir}/openshift
 %{_bindir}/osc
+%{_bindir}/osadm
 %{_sharedstatedir}/openshift
 
 %files master
