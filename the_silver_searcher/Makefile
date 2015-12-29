@@ -1,14 +1,14 @@
 PACKAGE = the_silver_searcher
-VERSION = 0.30.0
+VERSION = 0.31.0
 RELEASE = 1
 #EXTRA_DIST = .gitignore
 TMPREPOS = tmp.repos
 TMPREVIEW = tmp.review
-FC_VERSION = fc21
-F_VERSION = f21
+FC_VERSION = fc23
+F_VERSION = f23
 
-commit =      c81622c5c5313c05eab2da3b5eca6c118b74369e
-shortcommit = c81622c
+commit =      d7193e13a7f8f9fe9732e1f546a39e45d3925eb3
+shortcommit = d7193e1
 
 all: srpm
 
