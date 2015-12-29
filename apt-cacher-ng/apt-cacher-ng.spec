@@ -1,5 +1,5 @@
 Name:             apt-cacher-ng
-Version:          0.8.3
+Version:          0.8.8
 Release:          1%{?dist}
 Summary:          Caching proxy for package files from Debian
 Group:            Applications/Internet
@@ -114,6 +114,9 @@ getent passwd apt-cacher-ng > /dev/null || useradd -r -d %{_sharedstatedir}/apt-
 %{_mandir}/man8/*
 
 %changelog
+* Tue Dec 29 2015 Kenjiro Nakayama <knakayam@redhat.com> - 0.8.8-1
+- update to 0.8.8
+
 * Thu May 07 2015 Kenjiro Nakayama <knakayam@redhat.com> - 0.8.3-1
 - update to 0.8.3
 
