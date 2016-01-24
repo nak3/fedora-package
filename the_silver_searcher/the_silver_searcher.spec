@@ -1,10 +1,13 @@
-%global commit d7193e13a7f8f9fe9732e1f546a39e45d3925eb3
+%global commit 36754027ac4f44c1d4329ee2b4fa1b112b6c3e45
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global bashcompdir %(pkg-config --variable=completionsdir bash-completion)
+%if "%{bashcompdir}" == ""
+%define bashcompdir "/etc/bash_completion.d"
+%endif
 
 Name:           the_silver_searcher
 Version:        0.31.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Super-fast text searching tool (ag)
 Group:          Applications/Text
 License:        ASL 2.0 and BSD
@@ -14,7 +17,9 @@ Source:         https://github.com/ggreer/the_silver_searcher/archive/%{commit}/
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  pcre-devel
+%if ! 0%{?el6}
 BuildRequires:  pkgconfig(bash-completion)
+%endif
 BuildRequires:  xz-devel
 BuildRequires:  zlib-devel
 
@@ -46,6 +51,9 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}
 %doc README.md LICENSE
 
 %changelog
+* Sun Jan 24 2016 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 0.31.0-2
+- Build for RHEL6(EPEL)
+
 * Tue Dec 29 2015 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 0.31.0-1
 - update to 0.31.0
 
