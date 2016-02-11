@@ -1,5 +1,5 @@
 PACKAGE = apt-cacher-ng
-VERSION = 0.8.8
+VERSION = 0.8.9
 RELEASE = 1
 UPSTREAM_RELEASE = 1
 TMPREPOS = tmp.repos
