@@ -1,8 +1,8 @@
-%global commit 3ba46df36d709641395298c9f178fc510eb23ddb
+%global commit 6afdb7f4864b59783b209bd26b7e77aba9b14994
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           jo
-Version:        0.8
+Version:        1.0
 Release:        1%{?dist}
 Summary:        Command-line to create JSON objects
 Group:          Applications/Text
@@ -22,7 +22,7 @@ jo is a small utility to create JSON objects
 %build
 autoreconf -i
 %configure
-make
+make %{?_smp_mflags}
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT

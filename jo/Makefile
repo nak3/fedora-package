@@ -1,5 +1,5 @@
 PACKAGE = jo
-VERSION = 0.8
+VERSION = 1.0
 RELEASE = 1
 #EXTRA_DIST = .gitignore
 TMPREPOS = tmp.repos
@@ -7,8 +7,8 @@ TMPREVIEW = tmp.review
 FC_VERSION = fc23
 F_VERSION = f23
 
-commit =      3ba46df36d709641395298c9f178fc510eb23ddb
-shortcommit = 3ba46df
+commit =      6afdb7f4864b59783b209bd26b7e77aba9b14994
+shortcommit = 6afdb7f
 
 all: srpm
 
