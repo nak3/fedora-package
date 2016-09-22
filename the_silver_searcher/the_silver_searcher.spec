@@ -1,4 +1,4 @@
-%global commit 31e1f8cb856736df254dccb62cf15e937002ef48
+%global commit cda635000a771d20905b4fa07dfc8dfef511c794
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global bashcompdir %(pkg-config --variable=completionsdir bash-completion)
 %if "%{bashcompdir}" == ""
@@ -7,7 +7,7 @@
 
 Name:           the_silver_searcher
 Version:        0.32.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Super-fast text searching tool (ag)
 Group:          Applications/Text
 License:        ASL 2.0 and BSD
@@ -48,9 +48,15 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}
 %{_bindir}/ag
 %{_mandir}/man1/ag.1*
 %(dirname %{bashcompdir})
-%doc README.md LICENSE
+%doc README.md
+%if 0%{?fedora} >= 17 || 0%{?rhel} >= 7
+%license LICENSE
+%endif
 
 %changelog
+* Thu Sep 22 2016 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 0.32.0-2
+- Fixed bz#1377596
+
 * Thu Jun 30 2016 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 0.32.0-1
 - update to 0.32.0
 
