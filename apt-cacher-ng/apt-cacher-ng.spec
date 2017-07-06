@@ -1,5 +1,5 @@
 Name:             apt-cacher-ng
-Version:          0.8.9
+Version:          3
 Release:          1%{?dist}
 Summary:          Caching proxy for package files from Debian
 Group:            Applications/Internet
@@ -56,6 +56,7 @@ cp build/acngfs $RPM_BUILD_ROOT%{_libexecdir}/apt-cacher-ng/
 cp -a conf/{*mirror*,*.html,*.css} $RPM_BUILD_ROOT%{_libexecdir}/apt-cacher-ng/
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/apt-cacher-ng/
 cp -a conf/*.conf $RPM_BUILD_ROOT%{_sysconfdir}/apt-cacher-ng/
+cp -a conf/acng.conf.in $RPM_BUILD_ROOT%{_sysconfdir}/apt-cacher-ng/acng.conf
 cd $RPM_BUILD_ROOT%{_sysconfdir}/apt-cacher-ng
 cp -s ../../%{_libexecdir}/apt-cacher-ng/{*mirror*,*.html,*.css} .
 cd -
@@ -114,6 +115,9 @@ getent passwd apt-cacher-ng > /dev/null || useradd -r -d %{_sharedstatedir}/apt-
 %{_mandir}/man8/*
 
 %changelog
+* Thu Jul 06 2017 Kenjiro Nakayama <knakayam@redhat.com> - 3-1
+- update to 3
+
 * Sat Jan 30 2016 Kenjiro Nakayama <knakayam@redhat.com> - 0.8.9-1
 - update to 0.8.9
 
