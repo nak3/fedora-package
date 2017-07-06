@@ -1,14 +1,14 @@
 PACKAGE = the_silver_searcher
-VERSION = 0.33.0
+VERSION = 2.0.0
 RELEASE = 1 
 #EXTRA_DIST = .gitignore
 TMPREPOS = tmp.repos
 TMPREVIEW = tmp.review
-FC_VERSION = fc23
-F_VERSION = f23
+FC_VERSION = fc25
+F_VERSION = f25
 
-commit =      944e0111e29e399c92c8b30f8011213971fbffb3
-shortcommit = 944e011
+commit =      99cf1834ce2c038c184d64793aaa6686381c49c5
+shortcommit = 99cf183
 
 all: srpm
 
@@ -27,7 +27,7 @@ scp:
 # $(PACKAGE)-$(VERSION):
 # 	cp -r $(PACKAGE) $(PACKAGE)-$(VERSION)
 
-srpm:   wget
+srpm:
 	mkdir -p $(TMPREPOS)/{SPECS,RPMS,SRPMS,SOURCES}
 	cp $(PACKAGE)-$(VERSION).tar.gz $(TMPREPOS)/SOURCES/$(VERSION)-$(shortcommit).tar.gz
 	rpmbuild --define="_source_filedigest_algorithm md5" --define="_topdir `pwd`/$(TMPREPOS)" -bs $(PACKAGE).spec
