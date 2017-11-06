@@ -1,4 +1,4 @@
-%global commit 99cf1834ce2c038c184d64793aaa6686381c49c5
+%global commit 1a5e259b259130b50607174fc9f9508dc1f2941c
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global bashcompdir %(pkg-config --variable=completionsdir bash-completion)
 %if "%{bashcompdir}" == ""
@@ -6,7 +6,7 @@
 %endif
 
 Name:           the_silver_searcher
-Version:        2.0.0
+Version:        2.1.0
 Release:        1%{?dist}
 Summary:        Super-fast text searching tool (ag)
 Group:          Applications/Text
@@ -58,6 +58,9 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}
 %{_datadir}/zsh/site-functions/_%{name}
 
 %changelog
+* Mon Nov 6 2017 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 2.1.0-1
+- update to 2.1.0
+
 * Fri Jun 9 2017 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 2.0.0-1
 - update to 2.0.0
 
@@ -96,9 +99,6 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 * Sun Jun 22 2014 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 0.22.0-1
 - update to 0.22.0
-
-* Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.21.0-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
 * Tue Apr 22 2014 Kenjiro Nakayama <nakayamakenjiro@gmail.com> - 0.21.0-1
 - update to 0.21.0
