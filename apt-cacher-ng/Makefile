@@ -1,7 +1,7 @@
 PACKAGE = apt-cacher-ng
-VERSION = 3
+VERSION = 3.1
 RELEASE = 1
-UPSTREAM_RELEASE = 5
+UPSTREAM_RELEASE = 1
 TMPREPOS = tmp.repos
 TMPREVIEW = tmp.review
 FC_VERSION = fc25
@@ -20,7 +20,8 @@ scp:
 	scp tmp.repos/SRPMS/$(PACKAGE)-$(VERSION)-$(RELEASE).$(FC_VERSION).src.rpm fedorapeople:/home/fedora/kenjiro/public_html/pkgreview/$(PACKAGE)/
 	scp $(PACKAGE).spec fedorapeople:/home/fedora/kenjiro/public_html/pkgreview/$(PACKAGE)/
 
-srpm:	wget
+#srpm:	wget
+srpm:
 	mkdir -p $(TMPREPOS)/{SPECS,RPMS,SRPMS,SOURCES}
 	cp $(PACKAGE)_$(VERSION).orig.tar.xz $(TMPREPOS)/SOURCES/$(PACKAGE)_$(VERSION).orig.tar.xz
 	cp $(PACKAGE)_$(VERSION)-$(UPSTREAM_RELEASE).debian.tar.xz $(TMPREPOS)/SOURCES/$(PACKAGE)_$(VERSION)-$(RELEASE).debian.tar.xz

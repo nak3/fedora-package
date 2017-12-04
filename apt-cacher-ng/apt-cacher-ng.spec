@@ -1,5 +1,5 @@
 Name:             apt-cacher-ng
-Version:          3
+Version:          3.1
 Release:          1%{?dist}
 Summary:          Caching proxy for package files from Debian
 Group:            Applications/Internet
@@ -17,7 +17,6 @@ BuildRequires:    zlib-devel
 BuildRequires:    bzip2-devel
 BuildRequires:    xz-devel
 BuildRequires:    fuse-devel
-BuildRequires:    tcp_wrappers-devel
 BuildRequires:    cmake
 BuildRequires:    openssl-devel
 BuildRequires:    boost-devel
@@ -115,6 +114,9 @@ getent passwd apt-cacher-ng > /dev/null || useradd -r -d %{_sharedstatedir}/apt-
 %{_mandir}/man8/*
 
 %changelog
+* Mon Dec 04 2017 Kenjiro Nakayama <knakayam@redhat.com> - 3.1-1
+- update to 3.1
+
 * Thu Jul 06 2017 Kenjiro Nakayama <knakayam@redhat.com> - 3-1
 - update to 3
 
