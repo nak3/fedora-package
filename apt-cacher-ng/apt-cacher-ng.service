@@ -10,6 +10,7 @@ ExecStart=/usr/sbin/apt-cacher-ng $DAEMON_OPTS pidfile=/var/run/apt-cacher-ng/pi
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s QUIT $MAINPID
 PrivateTmp=true
+User=apt-cacher-ng
 
 [Install]
 WantedBy=multi-user.target

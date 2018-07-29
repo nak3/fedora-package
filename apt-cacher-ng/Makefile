@@ -1,11 +1,11 @@
 PACKAGE = apt-cacher-ng
 VERSION = 3.1
-RELEASE = 1
+RELEASE = 4
 UPSTREAM_RELEASE = 1
 TMPREPOS = tmp.repos
 TMPREVIEW = tmp.review
-FC_VERSION = fc25
-F_VERSION = fc25
+FC_VERSION = fc28
+F_VERSION = fc28
 
 all: srpm
 
@@ -24,7 +24,7 @@ scp:
 srpm:
 	mkdir -p $(TMPREPOS)/{SPECS,RPMS,SRPMS,SOURCES}
 	cp $(PACKAGE)_$(VERSION).orig.tar.xz $(TMPREPOS)/SOURCES/$(PACKAGE)_$(VERSION).orig.tar.xz
-	cp $(PACKAGE)_$(VERSION)-$(UPSTREAM_RELEASE).debian.tar.xz $(TMPREPOS)/SOURCES/$(PACKAGE)_$(VERSION)-$(RELEASE).debian.tar.xz
+	cp $(PACKAGE)_$(VERSION)-$(UPSTREAM_RELEASE).debian.tar.xz $(TMPREPOS)/SOURCES/$(PACKAGE)_$(VERSION)-$(UPSTREAM_RELEASE).debian.tar.xz
 	#cp $(PACKAGE)_$(VERSION)-$(UPSTREAM_RELEASE).debian.tar.xz $(TMPREPOS)/SOURCES/$(PACKAGE)_$(VERSION).debian.tar.xz
 	cp $(PACKAGE).service $(TMPREPOS)/SOURCES/
 	rpmbuild --define="_source_filedigest_algorithm md5" --define="_topdir `pwd`/$(TMPREPOS)" -bs $(PACKAGE).spec

@@ -1,6 +1,6 @@
 Name:             apt-cacher-ng
 Version:          3.1
-Release:          1%{?dist}
+Release:          4%{?dist}
 Summary:          Caching proxy for package files from Debian
 Group:            Applications/Internet
 
@@ -13,6 +13,7 @@ Source2:          apt-cacher-ng.service
 Provides:         bundled(sha1-hollerbach)
 Provides:         bundled(md5-deutsch-c++)
 
+BuildRequires:    gcc-c++
 BuildRequires:    zlib-devel
 BuildRequires:    bzip2-devel
 BuildRequires:    xz-devel
@@ -114,6 +115,9 @@ getent passwd apt-cacher-ng > /dev/null || useradd -r -d %{_sharedstatedir}/apt-
 %{_mandir}/man8/*
 
 %changelog
+* Sun Jul 29 2018 Kenjiro Nakayama <knakayam@redhat.com> - 3.1-4
+- Fix 1609197 - apt-cacher-ng service is running in wrong permissions
+
 * Mon Dec 04 2017 Kenjiro Nakayama <knakayam@redhat.com> - 3.1-1
 - update to 3.1
 
@@ -134,9 +138,6 @@ getent passwd apt-cacher-ng > /dev/null || useradd -r -d %{_sharedstatedir}/apt-
 
 * Wed Jun 25 2014 Kenjiro Nakayama <knakayam@redhat.com> - 0.7.26-2
 - update to 0.7.26 fixed XSS vulnerability (rhbz 1111808)
-
-* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.25-5
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
 * Fri Mar 14 2014 Kenjiro Nakayama <knakayam@redhat.com> - 0.7.25-3
 - update to 0.7.25
